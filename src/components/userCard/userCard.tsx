@@ -2,11 +2,11 @@ import { User } from "../../types/user";
 
 const UserCard = ({ user }: { user: User }) => {
 	return (
-		<div>
-			<div>Name: {user.name}</div>
-			<div>Role: {user.role}</div>
-			<div>Queries Today: {user.queriesToday}</div>
-			<div>Queries Total: {user.queriesTotal}</div>
+		<div className="grid-rows-2 grid-cols-2">
+			<span>Name: {user.name}</span>
+			<span>Role: {user.role}</span>
+			<span>Queries Today: {user.queriesToday}</span>
+			<span>Queries Total: {user.queriesTotal}</span>
 			<hr />
 		</div>
 	);

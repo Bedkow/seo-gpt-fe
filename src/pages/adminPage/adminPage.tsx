@@ -9,10 +9,12 @@ const AdminPage = () => {
 	const [users, setUsers] = useState([]);
 
 	useEffect(() => {
-		mockAPI(usersJSON).then((data: any) => {
-			setUsers(data.users);
-			console.log(data.users);
-		});
+		mockAPI(usersJSON)
+			.then((data: any) => {
+				setUsers(data.users);
+				console.log(data.users);
+			})
+			.catch((err) => console.log(err));
 	}, []);
 
 	return (
