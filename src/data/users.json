@@ -1,0 +1,39 @@
+{
+	"users": [
+		{
+			"id": "12grgw3",
+			"name": "abc xyz",
+			"role": "copywriter",
+			"queriesToday": 3,
+			"queriesTotal": 39
+		},
+		{
+			"id": "1hqej23",
+			"name": "abc xyz",
+			"role": "copywriter",
+			"queriesToday": 3,
+			"queriesTotal": 39
+		},
+		{
+			"id": "1jjqetj3",
+			"name": "abc xyz",
+			"role": "copywriter",
+			"queriesToday": 3,
+			"queriesTotal": 39
+		},
+		{
+			"id": "1jqetkk23",
+			"name": "abc xyz",
+			"role": "copywriter",
+			"queriesToday": 3,
+			"queriesTotal": 39
+		},
+		{
+			"id": "12asszzz3",
+			"name": "abc xyz",
+			"role": "copywriter",
+			"queriesToday": 3,
+			"queriesTotal": 39
+		}
+	]
+}
