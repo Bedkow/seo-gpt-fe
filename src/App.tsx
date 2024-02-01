@@ -5,7 +5,7 @@ import AdminPage from "./pages/AdminPage/AdminPage";
 function App() {
 	return (
 		<Layout>
-			<main className="bg-bgmain text-tmain">
+			<main className='bg-bgmain text-tmain grow box-border'>
 				<AdminPage></AdminPage>
 			</main>
 		</Layout>

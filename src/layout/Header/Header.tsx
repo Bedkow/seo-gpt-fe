@@ -1,16 +1,24 @@
+import LinkButton from "../../components/LinkButton/LinkButton";
+
 const Header = () => {
 	return (
-		<header className="bg-bgmain text-tmain">
+		<header className='bg-bgmain text-tmain h-20 border-b-2'>
 			<nav>
-				<ul>
+				<ul className='flex flex-row justify-center gap-10'>
 					<li>
-						<a>Chat</a>
+						<LinkButton buttonLink='/chat' isNavButton={true}>
+							Chat
+						</LinkButton>
 					</li>
 					<li>
-						<a>Admin</a>
+						<LinkButton buttonLink='/admin-panel' isNavButton={true}>
+							Admin Panel
+						</LinkButton>
 					</li>
 					<li>
-						<a>Log Out</a>
+						<LinkButton buttonLink='/log-out' isNavButton={true}>
+							Log Out
+						</LinkButton>
 					</li>
 				</ul>
 			</nav>
