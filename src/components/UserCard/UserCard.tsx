@@ -18,7 +18,7 @@ const UserCard = ({ user }: { user: User }) => {
 						Change role:
 					</label>
 					<select
-						className='bg-bgmain text-tmain px-1 border'
+						className='bg-bgmain text-tmain px-1 border cursor-pointer'
 						id='role'
 						defaultValue={user.role}
 						onChange={() => alert("user role changed")}>

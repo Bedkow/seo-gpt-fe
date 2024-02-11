@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import mockAPI from "../../helpers/mockAPI";
 import usersJSON from "../../data/users.json";
 import UserCard from "../../components/UserCard/UserCard";
+import AddUserForm from "../../components/AddUserForm/AddUserForm";
 import { User } from "../../types/user";
 
 const AdminPage = () => {
@@ -22,7 +23,12 @@ const AdminPage = () => {
 			<div>Admin Page</div>
 			<hr></hr>
 			<br></br>
-			<div>
+      <AddUserForm></AddUserForm>
+      <br></br>
+      <hr></hr>
+      <br></br>
+      <label htmlFor="users-container" className="text-xl">Active Users</label>
+			<div id="users-container">
 				{users.map((user: User) => {
 					return <UserCard user={user} key={user.id}></UserCard>;
 				})}
