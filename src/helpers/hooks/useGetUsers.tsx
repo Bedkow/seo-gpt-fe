@@ -1,7 +1,9 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-const useGetUsers = (id?: string) => {
+const useGetUsers = () => {
+	const [usersData, setUsersData] = useState([]);
+
 	let apiURL: any;
 	if (process.env.REACT_APP_ENV_TYPE === "dev") {
 		apiURL = process.env.REACT_APP_API_URL_DEV;
@@ -13,12 +15,13 @@ const useGetUsers = (id?: string) => {
 		axios
 			.get(apiURL + "users")
 			.then((response) => {
-				console.log(response.data);
+				setUsersData(response.data);
 			})
 			.catch((error) => {
 				console.log(error);
 			});
-	});
+	}, []);
+	return usersData;
 };
 
 export default useGetUsers;

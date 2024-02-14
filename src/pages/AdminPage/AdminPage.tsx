@@ -1,25 +1,14 @@
 import { useEffect, useState } from "react";
 
-import mockAPI from "../../helpers/mockAPI";
-import usersJSON from "../../data/users.json";
 import UserCard from "../../components/UserCard/UserCard";
 import AddUserForm from "../../components/AddUserForm/AddUserForm";
 import { User } from "../../types/user";
 import useGetUsers from "../../helpers/hooks/useGetUsers";
 
 const AdminPage = () => {
-	const [users, setUsers] = useState([]);
+	// const [users, setUsers] = useState([]);
 
-	useEffect(() => {
-		mockAPI(usersJSON)
-			.then((data: any) => {
-				setUsers(data.users);
-				// console.log(data.users);
-			})
-			.catch((err) => console.log(err));
-	}, []);
-
-	useGetUsers();
+	let users = useGetUsers();
 
 	return (
 		<div>
@@ -35,7 +24,8 @@ const AdminPage = () => {
 			</label>
 			<div id='users-container'>
 				{users.map((user: User) => {
-					return <UserCard user={user} key={user.id}></UserCard>;
+					console.log(user);
+					return <UserCard user={user} key={user._id}></UserCard>;
 				})}
 			</div>
 		</div>

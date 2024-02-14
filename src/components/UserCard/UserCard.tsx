@@ -1,7 +1,7 @@
 import { User } from "../../types/user";
 
 const UserCard = ({ user }: { user: User }) => {
-	console.log(user.role);
+	// console.log(user.role);
 	return (
 		<div className='grid grid-rows-3 p-2 m-5 border-2 b rounded-r-lg w-fit'>
 			<div className='p-1 flex flex-row flex-wrap'>
@@ -14,12 +14,12 @@ const UserCard = ({ user }: { user: User }) => {
 			</div>
 			<div className='p-1 flex justify-between'>
 				<div>
-					<label className='px-1' htmlFor='role'>
+					<label className='px-1' htmlFor={user._id + "-role"}>
 						Change role:
 					</label>
 					<select
 						className='bg-bgmain text-tmain px-1 border cursor-pointer'
-						id='role'
+						id={user._id + "-role"}
 						defaultValue={user.role}
 						onChange={() => alert("user role changed")}>
 						<option value='none'>None</option>
