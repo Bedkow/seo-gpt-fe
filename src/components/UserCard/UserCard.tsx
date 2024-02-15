@@ -1,7 +1,11 @@
+import axios from "axios";
 import { User } from "../../types/user";
 
 const UserCard = ({ user }: { user: User }) => {
-	// console.log(user.role);
+	// const deleteUser = () => {
+	//   axios.delete()
+	// }
+
 	return (
 		<div className='grid grid-rows-3 p-2 m-5 border-2 b rounded-r-lg w-fit'>
 			<div className='p-1 flex flex-row flex-wrap'>

@@ -3,7 +3,7 @@ import Header from "../Header/Header";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
 	return (
-		<div className="flex flex-col justify-between h-full">
+		<div className='bg-bgmain text-tmain flex flex-col justify-between h-full px-8'>
 			<Header />
 			{children}
 			<Footer />

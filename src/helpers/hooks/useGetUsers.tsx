@@ -1,27 +1,25 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { fetchUserData } from "../../redux/userSlice";
+import { ThunkDispatch } from "@reduxjs/toolkit";
 
 const useGetUsers = () => {
-	const [usersData, setUsersData] = useState([]);
-
-	let apiURL: any;
-	if (process.env.REACT_APP_ENV_TYPE === "dev") {
-		apiURL = process.env.REACT_APP_API_URL_DEV;
-	} else {
-		apiURL = process.env.REACT_APP_API_URL_PROD;
-	}
+	const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
+	const { data, loading, error } = useSelector((state: any) => state.user);
 
 	useEffect(() => {
-		axios
-			.get(apiURL + "users")
-			.then((response) => {
-				setUsersData(response.data);
-			})
-			.catch((error) => {
-				console.log(error);
-			});
-	}, []);
-	return usersData;
+		dispatch(fetchUserData());
+	}, [dispatch]);
+
+	if (loading) {
+		return { loading: loading };
+	}
+	if (error) {
+		return { error: error };
+	}
+
+	return { data: data };
 };
 
 export default useGetUsers;
